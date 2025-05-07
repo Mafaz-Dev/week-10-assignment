@@ -35,7 +35,7 @@ This part involved setting up the S3 bucket to host the React frontend.
 
 Next, I configured the S3 bucket for media uploads.
 
-1.  **Created the bucket:** I created a second bucket named `yourname-blogapp-media` (again, replacing `yourname` with my name).
+1.  **Created the bucket:** I created a second bucket named `mafaz-blogapp-media`.
 2.  **Disabled public access block:** I unchecked the "Block all public access" option.
 3.  **Configured CORS:** I added the following CORS configuration:
 
@@ -50,17 +50,13 @@ Next, I configured the S3 bucket for media uploads.
     ]
     ```
 
-4.  **Tested file upload and retrieval:** I uploaded a test file to the bucket and verified that I could retrieve it successfully.
-
-**Deliverables:**
-
-*   **Screenshot of file upload:** I took a screenshot showing the file successfully uploaded to the `yourname-blogapp-media` bucket in the AWS Console.
+4.  **Tested file upload and retrieval:** I uploaded the assignment file to the bucket and verified that I could retrieve it successfully.
 
 ## Part 4: IAM User and Policy for S3 Media Bucket Access
 
 To control access to the media bucket, I created an IAM user with specific permissions.
 
-1.  **Created the IAM user:** I went to the IAM Console and created a new user named `blog-app-user`.
+1.  **Created the IAM user:** I went to the IAM Console and created a new user.
 2.  **Created a custom policy:** I created a custom policy with the following JSON, replacing `yourname-blogapp-media` with my actual bucket name:
 
     ```json
@@ -84,8 +80,8 @@ To control access to the media bucket, I created an IAM user with specific permi
     }
     ```
 
-3.  **Attached the policy to the user:** I attached the custom policy to the `blog-app-user`.
-4.  **Saved the credentials:** I carefully saved the Access Key ID and Secret Access Key for the user. **Important: I did not share these credentials in my submission or GitHub repo!**
+3.  **Attached the policy to the user:** I attached the custom policy to the user.
+4.  **Saved the credentials:** I carefully saved the Access Key ID and Secret Access Key for the user.
 
 ## Part 5: EC2 Backend Setup
 
