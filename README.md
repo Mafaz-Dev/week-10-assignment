@@ -1,26 +1,5 @@
-# week-10-assignment
-Infrastructure Bootcamp Assignment
 # MERN Stack Blog App Deployment on AWS
-
-This document outlines the steps to deploy a MERN (MongoDB, Express, React, Node.js) stack blog application on AWS using free-tier eligible services, as per the Week 10 Infrastructure Bootcamp Assignment.
-
-## Table of Contents
-
-1.  [Prerequisites](#prerequisites)
-2.  [Part 1: MongoDB Atlas Configuration (Optional)](#part-1-mongodb-atlas-configuration-optional)
-3.  [Part 2: S3 Bucket for Frontend](#part-2-s3-bucket-for-frontend)
-4.  [Part 3: S3 for Media Uploads](#part-3-s3-for-media-uploads)
-5.  [Part 4: IAM User and Policy for S3 Media Bucket Access](#part-4-iam-user-and-policy-for-s3-media-bucket-access)
-6.  [Part 5: EC2 Backend Setup](#part-5-ec2-backend-setup)
-7.  [Cleanup](#cleanup)
-8.  [Troubleshooting](#troubleshooting)
-
-## Prerequisites
-
-*   An AWS account with appropriate permissions to create and manage EC2 instances, S3 buckets, and IAM users/policies.
-*   Basic understanding of AWS services.
-*   Familiarity with MERN stack development.
-*   SSH client (e.g., PuTTY, Terminal).
+Infrastructure Bootcamp Assignment
 
 ## Part 1: MongoDB Atlas Configuration (Optional)
 
