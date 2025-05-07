@@ -86,10 +86,11 @@ To control access to the media bucket, I created an IAM user with specific permi
 ## Part 5: EC2 Backend Setup
 
 This was the most involved part, setting up the EC2 instance and deploying the backend.
+I repeated it twice because the last step "aws s3 sync dist/ s3://<your-s3-frontend-bucket-name>/" caused an error, and when I tried to fix it, everything was gone, and I had to start all over again.
 
 1.  **Launched the EC2 instance:** I launched a `t3.micro` instance in `eu-north-1` using Ubuntu 22.04 LTS.
 2.  **Configured security group:** I configured the security group to allow incoming traffic on ports 22 (SSH), 80 (HTTP), 443 (HTTPS), and 5000 (Custom TCP for the backend).
-3.  **Ran the User Data script:** I SSHed into the instance and ran the provided User Data script to install necessary software (Git, Node.js, PM2, AWS CLI, etc.).
+3.  **Ran the User Data script:** I SSHed into the instance and ran the provided User Data script to install necessary software (Git, Node.js, PM2, AWS CLI).
 4.  **Cloned the MERN app:** I cloned the MERN app repository:
 
     ```bash
@@ -123,11 +124,6 @@ This was the most involved part, setting up the EC2 instance and deploying the b
     aws s3 sync dist/ s3://<your-s3-frontend-bucket-name>/
     ```
 
-**Deliverables:**
-
-*   **Screenshot of backend server running via pm2:** I ran `pm2 list` on my EC2 instance and took a screenshot to show the backend server running.
-*   **Screenshot of frontend s3 web page:** I accessed the frontend application via the S3 static website hosting URL and took a screenshot of the running application.
-
 ## Cleanup
 
 After completing the assignment, I:
@@ -140,8 +136,7 @@ After completing the assignment, I:
 
 During the process, I encountered a few issues:
 
-*   **Website not loading initially:** This was due to a misconfigured bucket policy. I corrected the policy and the website started loading.
+*   **Website not loading initially:** This was due to a misconfigured bucket policy. I corrected the policy, and the website started loading.
 *   **Media uploads failing:** I realized I had not configured the CORS settings correctly on the media bucket. After updating the CORS configuration, media uploads started working.
 *   **MongoDB connection errors:** I had forgotten to whitelist the EC2 instance's IP address in the MongoDB Atlas network access settings. Once I added the IP address, the backend was able to connect to the database.
-
-This document reflects my personal experience deploying the MERN stack blog application on AWS. Your experience may vary, but I hope this provides a helpful guide.
+*   **Frontend S3 web page blank:** I couldn't figure out the problem and failed to show the page.
